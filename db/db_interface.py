@@ -10,8 +10,8 @@ from logs.config import logger
 class DataBaseInterface:
 
     def __init__(self):
-        # self.db_url = config.ENGINE_URL
-        self.db_url = config.DATABASE_URL  # for local
+        self.db_url = config.ENGINE_URL
+        # self.db_url = config.DATABASE_URL  # for local
         self.engine = create_engine(self.db_url, echo=True)
 
     def get_session(self) -> Session:
