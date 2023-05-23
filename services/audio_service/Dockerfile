@@ -8,7 +8,7 @@ RUN apt-get update
 RUN apt-get install -y ffmpeg
 
 
-COPY ./data/config.py /data/config.py
+COPY ./data/ /data
 COPY ./logs/config.py /logs/config.py
 COPY ./services/audio_service /services/audio_service
 COPY ./db/db_interface.py /db/db_interface.py
