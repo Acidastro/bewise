@@ -13,17 +13,22 @@
 > ```
 > git clone https://github.com/Acidastro/bewise.git
 > ```
-# Starting
-> ### Service 1
+# Run
+> ### For service 1
 > Run command
 > ```
 > docker-compose -f bewise/docker-compose.yml up --build question_service
 > ```
 
-> ### Service 2
+> ### For service 2
 >  Run command
 >  ```
 >  docker-compose -f bewise/docker-compose.yml up --build audio_service
+>  ```
+> ### For all
+>  Run command
+>  ```
+>  docker-compose -f bewise/docker-compose.yml up --build
 >  ```
 # Examples of using
 > ## Service 1
