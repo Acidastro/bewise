@@ -32,8 +32,9 @@
 >  ```
 # Examples of using
 > ## Service 1
+> >   * **Swagger URL** [http://localhost:23000/docs/](http://localhost:23000/docs/)
 > ### 1. Get questions (POST)
->   * **Request URL** [http://localhost:23000/get_question/]()
+>   * **Request URL** [http://localhost:23000/get_question/](http://localhost:23000/get_question/)
 >     * Request example
 >       ``` 
 >       curl -X 'POST' \
@@ -51,7 +52,8 @@
 
 >## Service 2
 > ### 1. Create user (POST)
->   * **Request URL** [http://localhost:23001/create_user/]()
+> >   * **Swagger URL** [http://localhost:23001/docs/](http://localhost:23001/docs/)
+>   * **Request URL** [http://localhost:23001/create_user/](http://localhost:23001/create_user/)
 >     * Request example
 >       ```
 >       curl -X 'POST' \
@@ -70,7 +72,7 @@
 >       }
 >       ```
 > ### 2. Upload audio route (POST)
->   * **Request URL** [http://localhost:23001/upload_audio/]()
+>   * **Request URL** [http://localhost:23001/upload_audio/](http://localhost:23001/upload_audio/)
 >     * Request example
 >       ```
 >       curl -X 'POST' \
@@ -84,7 +86,7 @@
 >       http://localhost:23001/record?audio=6&user=12
 >       ```
 > ### 3. Download audio route
->   * **Request URL** [http://localhost:23001/record/?audio=6&user=12]()
+>   * **Request URL** [http://localhost:23001/record/?audio=6&user=12](http://localhost:23001/record/?audio=6&user=12)
 >     * Request example
 >       ```
 >       curl -X 'GET' \
