@@ -1,19 +1,23 @@
-from sqlmodel import SQLModel, Field
+from pydantic import BaseModel, Field
+from sqlalchemy import Column, String, Integer
+
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 
 
-class UserSchemaIn(SQLModel):
+class UserSchemaIn(BaseModel):
     user_name: str = Field(max_length=20, min_length=2)
 
 
-class UserUploadSchema(SQLModel):
+class UserUploadSchema(BaseModel):
     user_id: int
     user_token: str
 
 
-class UserModelTable(UserSchemaIn, table=True):
-    user_id: int = Field(default=None, primary_key=True)
-    user_token: str = Field(unique=True)
+class UserModelTable(Base):
     __tablename__ = 'user'
 
-    class Config:
-        arbitrary_types_allowed = True
+    user_id = Column(Integer, primary_key=True)
+    user_token = Column(String)
+    user_name = Column(String)
