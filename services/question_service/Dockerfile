@@ -8,3 +8,5 @@ COPY ./data /data
 COPY ./logs/config.py /logs/config.py
 COPY ./services/question_service /services/question_service
 COPY ./db/db_interface.py /db/db_interface.py
+
+RUN chmod +x ./data/wait-for-it.sh

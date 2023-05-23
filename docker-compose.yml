@@ -8,7 +8,8 @@ services:
       dockerfile: ./services/question_service/Dockerfile
     env_file:
       - .env
-    command: gunicorn services.question_service.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:${WEB_PORT}
+    command: ["./data/wait-for-it.sh", "db:5432", "--", "gunicorn", "services.question_service.main:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:${WEB_PORT}"]
+    restart: unless-stopped
     ports:
       - "23000:${WEB_PORT}"
     depends_on:
@@ -23,7 +24,8 @@ services:
       dockerfile: ./services/audio_service/Dockerfile
     env_file:
       - .env
-    command: gunicorn services.audio_service.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:${WEB_PORT}
+    command: ["./data/wait-for-it.sh", "db:5432", "--", "gunicorn", "services.audio_service.main:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:${WEB_PORT}"]
+    restart: unless-stopped
     ports:
       - "23001:${WEB_PORT}"
     depends_on:

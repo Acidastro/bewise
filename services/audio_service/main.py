@@ -9,8 +9,17 @@ from services.audio_service.views import get_response_for_upload_audio, \
     get_response_for_download_audio, get_response_for_create_user
 
 app = FastAPI()
-DBI().init_db(UserModelTable)
-DBI().init_db(AudioModelTable)
+
+
+@app.on_event("startup")
+def startup_event():
+    """
+    Creates all the required tables
+    """
+    db_interface = DBI()
+    models = [UserModelTable, AudioModelTable]
+    for model in models:
+        db_interface.init_db(model)
 
 
 @app.post('/create_user/', response_model=UserUploadSchema)
