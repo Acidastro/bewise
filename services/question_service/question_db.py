@@ -43,7 +43,7 @@ def get_n_last_questions_from_db(num, session) -> list:
     :return list: last n records from db
     """
     query = session.query(QuestionModelTable).order_by(
-        QuestionModelTable.id.desc()).limit(num)
+        QuestionModelTable.id_question.desc()).limit(num)
     questions = query.all()
     logger.info(f'got {len(questions)} questions from db')
     return questions
