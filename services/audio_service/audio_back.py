@@ -14,7 +14,7 @@ def generate_url(audio_id, user_id) -> str:
     :return: Возвращает URL для скачивания записи вида
     http://host:port/record?id=id_записи&user=id_пользователя
     """
-    url = f'http://{POSTGRES_HOST}:{WEB_PORT}' \
+    url = f'http://{POSTGRES_HOST}:23001' \
           f'/record?audio={audio_id}&user={user_id}'
     return url
 
