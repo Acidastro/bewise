@@ -17,15 +17,15 @@
 > ### Service 1
 > Run command
 > ```
-> docker-compose up --build question_service
+> docker-compose -f bewise/docker-compose.yml up --build question_service
 > ```
 
 > ### Service 2
 >  Run command
 >  ```
->  docker-compose up --build audio_service
+>  docker-compose -f bewise/docker-compose.yml up --build audio_service
 >  ```
-# Usage
+# Examples of using
 > ## Service 1
 > ### 1. Get questions (POST)
 >   * **Request URL** [http://localhost:23000/get_question/]()
